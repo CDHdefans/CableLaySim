@@ -48,9 +48,10 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 
 ### 手动启动
 
-后端仅使用 Python 标准库：
+先安装后端依赖并启动 API：
 
 ```powershell
+python -m pip install -r backend/requirements.txt
 python backend/api/app.py --host 127.0.0.1 --port 8765
 ```
 
@@ -123,6 +124,7 @@ CableLaySim/
 ## 测试
 
 ```powershell
+python -m pip install -r backend/requirements.txt
 python -m unittest discover -s backend/tests -v
 
 cd frontend

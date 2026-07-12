@@ -1,6 +1,6 @@
 # CableLaySim 后端
 
-后端由 Python 实现，包含缆线静态/动态求解、准实时会话、HTTP API、结果输出以及外部软件对比工具。核心运行路径只依赖 Python 标准库。
+后端由 Python 实现，包含缆线静态/动态求解、准实时会话、HTTP API、结果输出以及外部软件对比工具。核心运行路径依赖 Python 标准库与 NumPy。
 
 ## 结构
 
@@ -29,6 +29,7 @@ backend/
 在仓库根目录执行：
 
 ```powershell
+python -m pip install -r backend/requirements.txt
 python backend/api/app.py --host 127.0.0.1 --port 8765
 ```
 
@@ -97,6 +98,7 @@ python backend/scripts/validate_moordyn_moorpy.py --help
 在仓库根目录执行：
 
 ```powershell
+python -m pip install -r backend/requirements.txt
 python -m unittest discover -s backend/tests -v
 ```
 

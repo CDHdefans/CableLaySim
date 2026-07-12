@@ -12,6 +12,7 @@ Set-StrictMode -Version Latest
 
 $Root = Split-Path -Parent $MyInvocation.MyCommand.Path
 $FrontendDir = Join-Path $Root "frontend"
+$BackendRequirements = Join-Path $Root "backend\requirements.txt"
 $BackendUrl = "http://${BackendHost}:${BackendPort}"
 $FrontendUrl = "http://${FrontendHost}:${FrontendPort}"
 $BackendHealthUrl = "$BackendUrl/api/health"
@@ -108,6 +109,9 @@ Write-Host "Using Node: $NodeCommand"
 Write-Host "Using npm: $NpmCommand"
 
 if (-not $SkipInstall) {
+    Write-Host "Installing backend dependencies..."
+    & $PythonCommand -m pip install --disable-pip-version-check -r $BackendRequirements
+
     Push-Location $FrontendDir
     try {
         if (-not (Test-Path (Join-Path $FrontendDir "node_modules"))) {
