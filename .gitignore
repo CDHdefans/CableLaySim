@@ -1,0 +1,29 @@
+# Operating system and editors
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+
+# Local configuration and credentials
+.env*
+*.local
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Frontend dependencies and build output
+frontend/node_modules/
+frontend/dist/
+frontend/tsconfig.tsbuildinfo
+
+# Solver output and temporary files
+backend/output/
+backend/tmp/
+tmp/
+.run/
+.playwright-mcp/
+.codegraph/
